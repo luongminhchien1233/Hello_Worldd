@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                echo 'this is a building step'
+            }
+        }
+        stage('Run Python') {
+            steps {
+                echo 'Building..'
+                sh 'pip install Faker'
+                python fake.py
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                echo 'this is testing step'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                echo 'this is deploying step'
+            }
+        }
+    }
+}
